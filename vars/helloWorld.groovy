@@ -6,7 +6,11 @@ def call(Map config = [:]) {
             stage('Hello From Inside'){
                 steps{
                     script{
-                        echo "${config.name}"
+                        if(config.name == null){
+                            echo "Value Not Provided"
+                        }else{
+                            echo "My Name is ${config.name}"         
+                        }
                     }
                 }
             }
