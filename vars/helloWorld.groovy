@@ -1,12 +1,4 @@
-def call(body) {
-        def pipelineParams = [:]
-    body.resolveStrategy = Closure.DELEGATE_FIRST
-    body.delegate = pipelineParams
-    body()
-
-    def name = getValueOrDefault("${pipelineParams.name}","n")
-     def application = getValueOrDefault("${pipelineParams.application}","n")
-    // def notifyEmail = "${pipelineParams.notifyEmail}"
+def call(Map config) {
     pipeline{
         agent any
         stages{
@@ -17,7 +9,7 @@ def call(body) {
                         if(config.name == null){
                             echo "Value Not Provided"
                         }else{
-                            echo "My Name is ${name} and age is ${config.age}"         
+                            echo "My Name is ${config.name} and age is ${config.age}"         
                         }
                         callingOtherMethod(age: config.age)
                     }
