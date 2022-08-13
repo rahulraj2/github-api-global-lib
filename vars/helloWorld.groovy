@@ -4,7 +4,11 @@ def call(Map config = [:]) {
         agent any
         stages{
             stage('Hello From Inside'){
-                echo "${config.name}"
+                steps{
+                    script{
+                        echo "${config.name}"
+                    }
+                }
             }
         }
     }
