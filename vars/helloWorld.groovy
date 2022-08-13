@@ -1,3 +1,3 @@
 def call(Map config = [:]) {
-    sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
+    echo "Hello World From Shared Library"
 }
