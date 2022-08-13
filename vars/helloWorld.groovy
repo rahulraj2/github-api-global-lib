@@ -5,7 +5,7 @@ def call(Map config) {
             stage('Hello From Inside'){
                 steps{
                     script{
-                        echo "Hello World From Shared Library ${application}"
+                        echo "Hello World From Shared Library ${config.application}"
                         if(config.name == null){
                             echo "Value Not Provided"
                         }else{
