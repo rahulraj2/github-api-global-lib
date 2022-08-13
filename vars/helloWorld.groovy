@@ -1,5 +1,5 @@
-def call(Map config = [:]) {
-    echo "Hello World From Shared Library"
+def call(application, Map config = [:]) {
+    echo "Hello World From Shared Library ${application}"
     pipeline{
         agent any
         stages{
