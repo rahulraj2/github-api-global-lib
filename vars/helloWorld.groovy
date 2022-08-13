@@ -9,7 +9,7 @@ def call(Map config = [:]) {
                         if(config.name == null){
                             echo "Value Not Provided"
                         }else{
-                            echo "My Name is ${config.name}"         
+                            echo "My Name is ${config.name} and age is ${config.age}"         
                         }
                         callingOtherMethod(config.age)
                     }
