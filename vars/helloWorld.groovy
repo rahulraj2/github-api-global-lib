@@ -11,7 +11,7 @@ def call(Map config = [:]) {
                         }else{
                             echo "My Name is ${config.name}"         
                         }
-                        callingOtherMethod()
+                        callingOtherMethod(config.age)
                     }
                 }
             }
