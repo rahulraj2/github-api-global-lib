@@ -1,11 +1,11 @@
 def call(application, Map config = [:]) {
-    echo "Hello World From Shared Library ${application}"
     pipeline{
         agent any
         stages{
             stage('Hello From Inside'){
                 steps{
                     script{
+                        echo "Hello World From Shared Library ${application}"
                         if(config.name == null){
                             echo "Value Not Provided"
                         }else{
