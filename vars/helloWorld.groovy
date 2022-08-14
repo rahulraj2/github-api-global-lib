@@ -6,7 +6,7 @@ def call(Map config) {
             stage('Hello From Inside'){
                 steps{
                     script{
-                        a = "10" 
+                        a = 10 
                         b="20"
                         echo "${a} ${b}"
                         echo "Hello World From Shared Library ${config.application}"
