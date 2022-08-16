@@ -9,7 +9,7 @@ def call(Map config) {
                         a = 10 
                         b="20"
                         echo "${a} ${b}"
-                        //println GIT_COMMIT
+                        println GIT_COMMIT
                         println BRANCH_NAME
                         echo "Hello World From Shared Library ${config.application}"
                         if(config.name == null){
