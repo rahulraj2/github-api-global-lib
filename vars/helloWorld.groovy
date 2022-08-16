@@ -5,7 +5,6 @@ def call(Map config) {
         environment {
             DOCKER_CRED = credentials('dockercred')
             BUILD_EXECUTED_BY = "Rahul"
-            SOME_NUMBER = callingOtherMethod(age: config.age)
         }
         stages{
             stage('Hello From Inside'){
