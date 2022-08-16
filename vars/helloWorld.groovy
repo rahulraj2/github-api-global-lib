@@ -2,6 +2,9 @@ def call(Map config) {
     def a, b , c
     pipeline{
         agent any
+        environment {
+            server_username = credentials('name')
+        }
         stages{
             stage('Hello From Inside'){
                 steps{
@@ -11,7 +14,7 @@ def call(Map config) {
                         echo "${a} ${b}"
                         println GIT_COMMIT
                         println BRANCH_NAME
-                        println CHANGE_ID
+                        echo "${server_username}"
                         echo "Hello World From Shared Library ${config.application}"
                         if(config.name == null){
                             echo "Value Not Provided"
