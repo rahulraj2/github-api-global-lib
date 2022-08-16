@@ -14,7 +14,7 @@ def call(Map config) {
                         echo "${a} ${b}"
                         println GIT_COMMIT
                         println BRANCH_NAME
-                        echo "${server_username}"
+                        echo "${server_username.server_username_USR}"
                         echo "Hello World From Shared Library ${config.application}"
                         if(config.name == null){
                             echo "Value Not Provided"
