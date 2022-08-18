@@ -8,6 +8,7 @@ def call(Map config) {
             GIT_URL = "${GIT_URL}"
             GIT_COMMIT = "${GIT_COMMIT}".substring(0,7)
             BUILD_DISPLAY_NAME = "${BUILD_NUMBER}"+"-${GIT_COMMIT}-"+"${BRANCH_NAME}"
+            currentBuild.displayName = "${BUILD_DISPLAY_NAME}"
         }
         stages{
             stage('Hello From Inside'){
@@ -20,7 +21,7 @@ def call(Map config) {
                         println BRANCH_NAME
                         println BUILD_EXECUTED_BY
                         println env.BUILD_EXECUTED_BY
-                        currentBuild.displayName = BUILD_DISPLAY_NAME
+                        //currentBuild.displayName = BUILD_DISPLAY_NAME
                         
                         echo "Hello World From Shared Library ${config.application}"
                         if(config.name == null){
