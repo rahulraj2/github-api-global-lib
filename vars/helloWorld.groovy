@@ -20,7 +20,7 @@ def call(Map config) {
                         println BRANCH_NAME
                         println BUILD_EXECUTED_BY
                         println env.BUILD_EXECUTED_BY
-                        println env.BUILD_DISPLAY_NAME
+                        BUILD_DISPLAY_NAME = BUILD_DISPLAY_NAME
                         
                         echo "Hello World From Shared Library ${config.application}"
                         if(config.name == null){
