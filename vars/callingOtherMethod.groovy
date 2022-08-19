@@ -1,5 +1,5 @@
-def call(Map config = []) {
-    echo "${config}".size
+def call(Map config = [:]) {
+    echo "${config}".size()
     bat "docker login -u ${DOCKER_CRED_USR} -p ${DOCKER_CRED_PSW}"
     echo "${env.BUILD_EXECUTED_BY}"
     echo "${config.age}"
