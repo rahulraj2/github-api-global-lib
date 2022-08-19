@@ -1,4 +1,4 @@
-def call(def somevar, Map config = [:]) {
+def call(Map config = [:]) {
     echo "${somevar}"
     def age = 10
     if(config.containsKey("age")){
