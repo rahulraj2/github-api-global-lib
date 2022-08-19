@@ -1,4 +1,3 @@
 def call (){
-    def namespace = ["app", "commonservice"]
-    return namespace
+    return ["app", "commonservice"]
 }
