@@ -7,7 +7,6 @@ def call(Map config = [:]) {
         age
     }
     echo "${age}"
-    echo "${sizelength}"
     bat "docker login -u ${DOCKER_CRED_USR} -p ${DOCKER_CRED_PSW}"
     echo "${env.BUILD_EXECUTED_BY}"
     echo "${config.age}"
