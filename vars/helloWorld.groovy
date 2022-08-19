@@ -21,7 +21,7 @@ def call(Map config) {
                         println BRANCH_NAME
                         println BUILD_EXECUTED_BY
                         println env.BUILD_EXECUTED_BY
-                        NAMESPACE.getClass()
+                        println NAMESPACE.getClass()
                         ENV_NAMESPACE = "app"
                         //currentBuild.displayName = BUILD_DISPLAY_NAME
                         if(NAMESPACE.indexof(ENV_NAMESPACE)){
