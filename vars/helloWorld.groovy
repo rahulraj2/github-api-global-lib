@@ -8,7 +8,7 @@ def call(Map config) {
             GIT_URL = "${GIT_URL}"
             GIT_COMMIT = "${GIT_COMMIT}".substring(0,7)
             BUILD_DISPLAY_NAME = "${BUILD_NUMBER}"+"-${GIT_COMMIT}-"+"${BRANCH_NAME}"
-            NAMESPACE = '["app", "commonservices"]'
+            NAMESPACE = appdNamespace()
         }
         stages{
             stage('Hello From Inside'){
