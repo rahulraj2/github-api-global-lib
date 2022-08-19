@@ -1,5 +1,8 @@
 def call(Map config) {
     def a, b , c
+    def getNamespace (){
+        return ['app', "commonservice"]
+    }
     pipeline{
         agent any
         environment {
@@ -8,7 +11,7 @@ def call(Map config) {
             GIT_URL = "${GIT_URL}"
             GIT_COMMIT = "${GIT_COMMIT}".substring(0,7)
             BUILD_DISPLAY_NAME = "${BUILD_NUMBER}"+"-${GIT_COMMIT}-"+"${BRANCH_NAME}"
-            NAMESPACE = appdNamespace()
+            NAMESPACE = getNamespace()
         }
         stages{
             stage('Hello From Inside'){
