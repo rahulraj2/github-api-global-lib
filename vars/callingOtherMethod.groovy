@@ -1,5 +1,12 @@
 def call(Map config = [:]) {
-    def sizelength = "${config}".size()
+    def age = 10
+    if(config.containsKey("age")){
+        echo "Contains"
+        age = config.age
+    }else{
+        age
+    }
+    echo "${age}"
     echo "${sizelength}"
     bat "docker login -u ${DOCKER_CRED_USR} -p ${DOCKER_CRED_PSW}"
     echo "${env.BUILD_EXECUTED_BY}"
