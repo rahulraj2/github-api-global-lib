@@ -1,8 +1,5 @@
 def call(Map config) {
     def a, b , c
-    def getNamespace (){
-        return ['app', "commonservice"]
-    }
     pipeline{
         agent any
         environment {
@@ -11,7 +8,7 @@ def call(Map config) {
             GIT_URL = "${GIT_URL}"
             GIT_COMMIT = "${GIT_COMMIT}".substring(0,7)
             BUILD_DISPLAY_NAME = "${BUILD_NUMBER}"+"-${GIT_COMMIT}-"+"${BRANCH_NAME}"
-            NAMESPACE = getNamespace()
+            NAMESPACE = "app, commonservices"
         }
         stages{
             stage('Hello From Inside'){
@@ -26,8 +23,9 @@ def call(Map config) {
                         println env.BUILD_EXECUTED_BY
                         println NAMESPACE.getClass()
                         ENV_NAMESPACE = "app"
+
                         //currentBuild.displayName = BUILD_DISPLAY_NAME
-                        if(NAMESPACE.indexof(ENV_NAMESPACE)){
+                        if(NAMESPACE.contains(ENV_NAMESPACE)){
                             echo "${ENV_NAMESPACE} exist in array and proceed to next"
                         }else{
                             echo "Please get your namespace added"
