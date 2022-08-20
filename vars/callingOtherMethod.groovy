@@ -1,5 +1,5 @@
 def call(Map config = [:]) {
-    echo "${somevar}"
+    echo "${config}"
     def age = 10
     if(config.containsKey("age")){
         echo "Contains"

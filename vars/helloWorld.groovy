@@ -38,7 +38,7 @@ def call(Map config) {
                         }else{
                             echo "My Name is ${config.name} and age is ${config.age}"         
                         }
-                        callingOtherMethod(ENV_NAMESPACE: "commonservices")
+                        callingOtherMethod(ENV_NAMESPACE: "commonservices", "Something")
                     }
                 }
             }
